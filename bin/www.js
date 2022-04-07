@@ -33,8 +33,8 @@ register.post("/", (req,res)=>{
   console.log("hit register")
   const stud = {
     name: req.body.name,
-    collegeId: req.body.collegeId,
-    // img: req.body.img,
+    collegeId: Number(req.body.collegeId),
+    img: req.body.img,
     class: req.body.class,
     section: req.body.section
   }
