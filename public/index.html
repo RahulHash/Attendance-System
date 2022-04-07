@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Radley:ital@0;1&family=Roboto+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&family=Sansita+Swashed:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <form method="post" action="/register" class="main-container">
+      <!-- logo -->
+      <div class="logo">
+        <img src="/images/logo.png" alt="COER_LOGO" />
+      </div>
+      <!-- heading -->
+      <div class="head">
+        <h1>SINGLE USER REGISTRATION</h1>
+      </div>
+      <!-- information -->
+      <div class="info">
+        <input type="text" name="name" placeholder="ENTER NAME"    class="name" />
+        <input type="text" name="collegeId" placeholder="ENTER COER ID" class="coer-id" />
+        <input type="text" name="class" placeholder="ENTER CLASS"   class="class" />
+        <input type="text" name="section" placeholder="ENTER SECTION" class="section" />
+        <div class="image-upload">
+          <label class="file-label">UPLOAD IMAGE</label>
+          <input type="file" name="img" class="file" />
+        </div>
+      </div>
+      <!-- submit button -->
+      <div class="submit-btn">
+        <input type="submit" />
+      </div>
+    </form>
+  </body>
+</html>

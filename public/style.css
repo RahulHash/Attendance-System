@@ -1,0 +1,123 @@
+@import "https://unpkg.com/open-props";
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    height: 100vh;
+}
+
+body{
+    height: 100%;
+    display: flex;
+    justify-content:center;
+    background-color: var(--yellow-0);
+}
+
+.main-container{
+    width: 50%;
+    border: 10px solid var(--yellow-5);
+    display:grid;
+    grid-template-rows: 15% 15% 60% 10%;
+    padding-block: 10px;
+    background-color: #f8f8f8;
+    box-shadow: var(--shadow-2);
+}
+
+/* information */
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding-inline: 20%;
+    padding-block: 5%;
+}
+
+.name, .coer-id, .class, .section, .image-upload{
+    height: 5em;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--yellow-0);
+    box-shadow: var(--shadow-1);
+    border-bottom:1px solid var(--yellow-3);
+
+}
+
+.image-upload{
+    display: flex;
+    gap: 1em;   
+    align-items: center;
+    padding-left:1em;
+    font-weight: bold;
+}
+
+.info>input::placeholder{
+    font-size:1.25em;
+    font-weight:bold;
+    color: black;
+    padding-left:1em;
+}
+
+.info>input:focus{
+    outline:1px solid var(--yellow-4);
+    padding-left: 1em;
+    caret-color: var(--yellow-8);
+}
+
+input[type="file"]::file-selector-button{
+    background-color: var(--yellow-3);
+    height:2em;
+    border:none;
+    width:100%;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+/* logo */
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.logo>img{
+    height: 100%;
+}
+
+/* heading */
+
+.head{
+    background-color: var(--yellow-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-inline: 10%;
+    margin-block: 1em;
+    font-size: .8em;
+    box-shadow: var(--shadow-1);
+}
+
+/* submit */
+
+.submit-btn{
+    text-align: center;
+}
+
+.submit-btn>input{
+    background-color: var(--yellow-3);
+    border: 1px solid var(--yellow-6);
+    border-radius:10px;
+    height:2.5em;
+    font-weight: bold;
+    width:40%;
+    font-size: 1.125em;
+    cursor: pointer;
+}
