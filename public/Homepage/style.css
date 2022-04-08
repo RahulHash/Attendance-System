@@ -23,12 +23,12 @@ body{
 }
 
 header{
-    background-color: var(--yellow-5);
+    background-color: var(--cyan-5);
     box-shadow:var(--shadow-2);
 }
 
 footer{
-    background-color: var(--yellow-5);
+    background-color: var(--cyan-5);
     box-shadow:0 -3px 5px -2px hsl(var(--shadow-color)/calc(var(--shadow-strength) + 3%)),0 -7px 14px -5px hsl(var(--shadow-color)/calc(var(--shadow-strength) + 5%));
 }
 
@@ -45,7 +45,7 @@ footer{
     gap:2em;
     height: 70%;
     width: 70%;
-    background-color:var(--yellow-4);
+    background-color:var(--cyan-4);
     border-radius: 10px;
     box-shadow:var(--shadow-2);
 }
@@ -72,7 +72,7 @@ footer{
 }
 
 .card {
-    border: 3px solid var(--yellow-3);
+    border: 3px solid var(--cyan-3);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -89,5 +89,5 @@ footer{
 
 .card > i {
     font-size: 3em;
-    color: var(--yellow-3);
+    color: var(--cyan-3);
 }

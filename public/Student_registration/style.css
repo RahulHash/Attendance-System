@@ -15,12 +15,12 @@ body{
     height: 100%;
     display: flex;
     justify-content:center;
-    background-color: var(--yellow-0);
+    background-color: var(--cyan-0);
 }
 
 .main-container{
     width: 50%;
-    border: 10px solid var(--yellow-5);
+    border: 10px solid var(--cyan-5);
     display:grid;
     grid-template-rows: 15% 15% 60% 10%;
     padding-block: 10px;
@@ -42,9 +42,9 @@ body{
     height: 5em;
     border: none;
     border-radius: 10px;
-    background-color: var(--yellow-0);
+    background-color: var(--cyan-0);
     box-shadow: var(--shadow-1);
-    border-bottom:1px solid var(--yellow-3);
+    border-bottom:1px solid var(--cyan-3);
 
 }
 
@@ -64,13 +64,13 @@ body{
 }
 
 .info>input:focus{
-    outline:1px solid var(--yellow-4);
+    outline:1px solid var(--cyan-4);
     padding-left: 1em;
-    caret-color: var(--yellow-8);
+    caret-color: var(--cyan-8);
 }
 
 input[type="file"]::file-selector-button{
-    background-color: var(--yellow-3);
+    background-color: var(--cyan-3);
     height:2em;
     border:none;
     width:100%;
@@ -94,7 +94,7 @@ input[type="file"]::file-selector-button{
 /* heading */
 
 .head{
-    background-color: var(--yellow-3);
+    background-color: var(--cyan-3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,8 +112,8 @@ input[type="file"]::file-selector-button{
 }
 
 .submit-btn>input{
-    background-color: var(--yellow-3);
-    border: 1px solid var(--yellow-6);
+    background-color: var(--cyan-3);
+    border: 1px solid var(--cyan-6);
     border-radius:10px;
     height:2.5em;
     font-weight: bold;
