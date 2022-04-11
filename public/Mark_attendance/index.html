@@ -269,26 +269,10 @@
         <h3>Click below or Drag to select file</h3>
         <form action="/video" method="post" class="form">
           <input id="file_select" type="file" name="video" accept="image/*, video/*">
-          <button id="btn_submit" onclick="uploadFile">Upload</button>
+          <button id="btn_submit" type="button">Upload</button>
         </form>
       </div>
     </div>
     <script src="./script.js"></script>
-    <script>
-      function uploadFile() {
-          console.log("Vikas");
-          // let formData = new FormData();    
-          // if(droppedFlie === null){
-          //   droppedFlie = input.files[0];
-          // }
-          // formData.append("droppedvideo", droppedFlie);
-          // await fetch('/video', {
-          //   method: "POST", 
-          //   body: formData
-          // });    
-
-          alert('The file has been uploaded successfully.');
-      }
-      </script>
   </body>
 </html>

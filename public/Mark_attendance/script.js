@@ -2,6 +2,7 @@ const showcase = document.getElementById('showcase');
 
 const input = document.querySelector('input[type="file"]')
 let file;
+var droppedFile = null;
 
 input.addEventListener('change', function (e) {
   let file_element = e.target
@@ -16,6 +17,7 @@ input.addEventListener('change', function (e) {
         showcase.style = ' transform: translateY(-90%); background-color: rgb(0, 128, 96);opacity: 1;'
         let svg = document.getElementById('svg')
         svg.classList.add('animate_svg')
+        droppedFile = object_url
         console.log(object_url)
       }
     }
@@ -37,7 +39,6 @@ document.addEventListener('drop', function (e) {
   selectFile()
 } , false)
 
-var droppedFile = null;
 function selectFile() {
   let fileType = file.type
   console.log(fileType)
@@ -61,3 +62,30 @@ function selectFile() {
     alert("Can't select this file..\n Please change the extension..")
   }
 }
+
+
+document.getElementById("btn_submit").addEventListener("click",async ()=>{
+  console.log("Clicked")
+
+  let form = document.querySelector(".form")
+
+  let formData = new FormData(form);    
+  if(droppedFile === null){
+    droppedFile = input.files[0];
+  }
+  // formData.append("droppedvideo", droppedFile);
+  formData.set("video", droppedFile);
+  formData.append("dummyAttr", {dummyObj: "dummy value"})
+  // console.log({DroppedFile: droppedFile})
+  // console.log(formData)
+  for([key, value] of formData.entries()) {
+    console.log(`${key} : ${value}`)
+  }
+  let res = await fetch('/video', {
+    method: "POST", 
+    body: formData
+  })
+
+  form.reset()
+  droppedFile = null;
+})

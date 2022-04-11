@@ -71,8 +71,6 @@ attendance.use("/", express.static("./public/Mark_attendance/"))
 app.use('/register', register)
 app.use('/attendance', attendance)
 app.use('/video', (req, res)=>{
-  if(req.body.droppedvideo){
-    return res.status(200).send(req.body.droppedvideo)
-  }
-  res.status(200).send(req.body.video)
+  console.log({FileUploaded: req.body})
+  res.status(200).redirect("/attendance")
 })
