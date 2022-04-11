@@ -17,9 +17,13 @@ const express = require("express");
 
 // init: express
 const app = express()
+app.use((req,res, next)=>{
+  console.log(`${req.method} : ${req.url}`)
+  next()
+})
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
-app.use(express.static("./public"))
+app.use(express.static("./public/Homepage"))
 
 app.listen(3000,()=>{
   console.log("server started listening on port 3000")
@@ -62,6 +66,13 @@ attendance.post("/",(req,res)=>{
   
   res.status(200).json(attendanceList);
 })
+attendance.use("/", express.static("./public/Mark_attendance/"))
 
 app.use('/register', register)
 app.use('/attendance', attendance)
+app.use('/video', (req, res)=>{
+  if(req.body.droppedvideo){
+    return res.status(200).send(req.body.droppedvideo)
+  }
+  res.status(200).send(req.body.video)
+})
