@@ -79,9 +79,6 @@ form {
   flex-direction: column;
   justify-content: center;
 }
-.main_content2 {
-  transform: skewY(5deg);
-}
 .showcase {
   position: absolute;
   width: 90%;

@@ -4,6 +4,9 @@ const input = document.querySelector('input[type="file"]')
 let file;
 var droppedFile = null;
 
+let validFiles = ['video/mp4', 'video/mpeg', 'video/mpeg2',
+                  'video/mkv']
+
 input.addEventListener('change', function (e) {
   let file_element = e.target
   let files = file_element.files
@@ -13,7 +16,13 @@ input.addEventListener('change', function (e) {
     for(let index in files) {
       if(files[index] instanceof File) {
         object_url = URL.createObjectURL(files[index])
-        showcase.innerHTML = `<img src="${object_url}" class="showcase_img"/>`
+        showcase.innerHTML = `<video id="video" class="showcase_img" controls>
+                              <source src="${object_url}" type="video/mp4">
+                              <source src="${object_url}" type="video/mpeg">
+                              <source src="${object_url}" type="video/mkv">
+                              Your browser does not support the video tag.
+                              </video>`
+        let video = document.getElementById("video")
         showcase.style = ' transform: translateY(-90%); background-color: rgb(0, 128, 96);opacity: 1;'
         let svg = document.getElementById('svg')
         svg.classList.add('animate_svg')
@@ -35,21 +44,22 @@ document.addEventListener('dragover', function (e) {
 document.addEventListener('drop', function (e) {
   e.preventDefault()
   file = e.dataTransfer.files[0];
-  
   selectFile()
 } , false)
 
 function selectFile() {
   let fileType = file.type
   console.log(fileType)
-  let validFiles = ['image/png', 'image/jpg', 'image/jpeg',
-                    'video/mp4', 'video/mpeg', 'video/mpeg2',
-                    'video/mkv']
   if(validFiles.includes(fileType)) {
     let fileReader = new FileReader()
     fileReader.onload = () => {
       let fileUrl = fileReader.result
-      showcase.innerHTML = `<img src="${fileUrl}" class="showcase_img"/>`
+      showcase.innerHTML = `<video id="video" class="showcase_img" controls>
+                            <source src="${fileUrl}" type="video/mp4">
+                            <source src="${fileUrl}" type="video/mpeg">
+                            <source src="${fileUrl}" type="video/mkv">
+                            Your browser does not support the video tag.
+                            </video>`
       showcase.style = 'transform: translateY(-90%); background-color: rgb(0, 128, 96);opacity: 1;'
       let svg = document.getElementById('svg')
       svg.classList.add('animate_svg')
