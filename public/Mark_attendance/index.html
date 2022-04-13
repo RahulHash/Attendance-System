@@ -267,9 +267,9 @@
         <div class="showcase" id="showcase">
         </div>
         <h3>Click below or Drag to select file</h3>
-        <form action="/video" method="post" class="form">
+        <form action="/video" method="post" class="form" enctype="multipart/form-data">
           <input id="file_select" type="file" name="video" accept="video/*">
-          <button id="btn_submit" type="button">Upload</button>
+          <button id="btn_submit" type="submit">Upload</button>
         </form>
       </div>
     </div>
