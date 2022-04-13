@@ -4,8 +4,7 @@ const input = document.querySelector('input[type="file"]')
 let file;
 var droppedFile = null;
 
-let validFiles = ['video/mp4', 'video/mpeg', 'video/mpeg2',
-                  'video/mkv']
+let validFiles = ['video/mp4', 'video/mpeg', 'video/mkv']
 
 input.addEventListener('change', function (e) {
   let file_element = e.target
@@ -69,7 +68,7 @@ function selectFile() {
     fileReader.readAsDataURL(file)
   }
   else {
-    alert("Can't select this file..\n Please change the extension..")
+    alert("Can't select this file..\n Please change the file type..")
   }
 }
 
@@ -84,8 +83,8 @@ document.getElementById("btn_submit").addEventListener("click",async ()=>{
     droppedFile = input.files[0];
   }
   // formData.append("droppedvideo", droppedFile);
-  formData.set("video", droppedFile);
-  formData.append("dummyAttr", {dummyObj: "dummy value"})
+  formData.append("video", {droppedFile});
+  // formData.append("dummyAttr", {dummyObj: "dummy value"})
   // console.log({DroppedFile: droppedFile})
   // console.log(formData)
   for([key, value] of formData.entries()) {
