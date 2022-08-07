@@ -32,11 +32,6 @@ input.addEventListener('change', function (e) {
   }
 }, false)
 
-// input.addEventListener('change', function (e) {
-//   file = this.files[0];
-//   selectFile()
-// })
-
 document.addEventListener('dragover', function (e) {
   e.preventDefault()
 } , false)
@@ -78,15 +73,11 @@ document.getElementById("btn_submit").addEventListener("click",async ()=>{
 
   let form = document.querySelector(".form")
 
-  let formData = new FormData(form);    
+  let formData = new FormData();    
   if(droppedFile === null){
     droppedFile = input.files[0];
   }
-  // formData.append("droppedvideo", droppedFile);
   formData.append("video", {droppedFile});
-  // formData.append("dummyAttr", {dummyObj: "dummy value"})
-  // console.log({DroppedFile: droppedFile})
-  // console.log(formData)
   for([key, value] of formData.entries()) {
     console.log(`${key} : ${value}`)
   }
