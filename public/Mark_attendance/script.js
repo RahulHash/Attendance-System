@@ -73,7 +73,7 @@ document.getElementById("btn_submit").addEventListener("click",async ()=>{
 
   let form = document.querySelector(".form")
 
-  let formData = new FormData();    
+  let formData = new FormData(form);    
   if(droppedFile === null){
     droppedFile = input.files[0];
   }
